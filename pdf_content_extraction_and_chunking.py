@@ -8,8 +8,10 @@ from reportlab.platypus import SimpleDocTemplate
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Preformatted
 
-
-
+##############################
+# This function extracts the most commonly used font size in the headers of a PDF document. 
+# The font_size_counter will keep track of the font size occurrences.
+##############################
 def extract_header_fontsize_from_pdf(pdf_path):
     font_size_counter = Counter()
 
@@ -37,6 +39,9 @@ def extract_header_fontsize_from_pdf(pdf_path):
     else:
         return None
 
+###########################################
+# This function is defined to extract lines with a specified font size (likely headers).
+###########################################
 
 def extract_lines_with_font_size(pdf_path, target_font_size):
     lines_with_target_font_size = []
@@ -60,6 +65,12 @@ def extract_lines_with_font_size(pdf_path, target_font_size):
 
     return lines_with_target_font_size
 
+
+############################################
+# This function is defined to generate a PDF document from a list of chunks (sections of content). 
+# The reportlab library is used to create a PDF file. The content is formatted as Preformatted text and added to the document.
+############################################
+
 def write_chunks_to_pdf(chunks, output_pdf_path):
     doc = SimpleDocTemplate(output_pdf_path, pagesize=letter)
     styles = getSampleStyleSheet()
@@ -71,6 +82,12 @@ def write_chunks_to_pdf(chunks, output_pdf_path):
 
     doc.build(story)
 
+
+###############################################
+# This function is defined to save each chunk as a separate PDF file. 
+# The chunks are iterated through, and the write_chunks_to_pdf function is called to generate a PDF for each chunk.
+###############################################
+
 def save_chunks_as_pdfs(chunks, output_folder):
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
@@ -79,6 +96,12 @@ def save_chunks_as_pdfs(chunks, output_folder):
         output_pdf_path = os.path.join(output_folder, f"output_pdf_part{i}.pdf")
         write_chunks_to_pdf([chunk], output_pdf_path)
         print(f"PDF saved at: {output_pdf_path}")
+
+
+#####################################################
+# The extract_chunks_from_pdf function extracts content chunks from a PDF based on the provided header lines (markers). 
+# It iterates through each page, identifies lines that match markers, and extracts content between those markers as chunks.
+#####################################################
 
 def extract_chunks_from_pdf(pdf_path, markers):
     chunks = []
