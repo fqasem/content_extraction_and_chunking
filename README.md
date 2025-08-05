@@ -17,9 +17,11 @@ From terminal:
 
 pip install pymupdf pdfplumber reportlab pytesseract pillow
 
-## 2. Image extraction:
+## 2. Text extraction from image:
 
 Source : https://www.nutrient.io/blog/how-to-use-tesseract-ocr-in-python/
+
+Optical character recognition (OCR) is essential for converting images of text into machine-encoded text, and Python provides powerful tools to streamline this process. In this tutorial, you’ll learn how to use Python with Tesseract OCR, a powerful open source OCR engine, using the pytesseract library. This guide walks you through installing Tesseract, setting up Python bindings, and running image-to-text extraction effectively. 
 
 
 ### How to resolve Tesseract Not Found isuue:
