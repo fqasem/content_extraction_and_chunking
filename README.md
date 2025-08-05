@@ -1,7 +1,7 @@
 # content_extraction_and_chunking
 This exercise shows content extraction and chunking from various types of files - pdf, image etc.
 
-1. Pdf content extraction:
+## 1. Pdf content extraction:
 
 The provided code demonstrates a powerful Python script for efficiently extracting and processing content from PDF documents. It employs various libraries such as pdfplumber, fitz, and reportlab to extract text, identify specific font sizes, segment content into meaningful chunks, and generate new PDFs based on those chunks. This code can be incredibly useful for tasks like analyzing PDF reports, extracting specific sections, and reorganizing content for further analysis or presentation.
 
@@ -17,7 +17,7 @@ From terminal:
 
 pip install pymupdf pdfplumber reportlab pytesseract pillow
 
-2. Image extraction:
+## 2. Image extraction:
 
 Source : https://www.nutrient.io/blog/how-to-use-tesseract-ocr-in-python/
 
