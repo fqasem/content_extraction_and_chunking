@@ -3,3 +3,10 @@ pdfplumber
 reportlab 
 pytesseract 
 pillow
+opencv-python
+numpy
+easyocr
+matplotlib
+torch 
+torchvision 
+torchaudio
